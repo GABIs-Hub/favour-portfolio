@@ -29,9 +29,9 @@ export default function Projects() {
         {PROJECTS.map((project, i) => (
           <Reveal key={i} delay={i * 100} className={project.featured ? 'md:col-span-2' : ''}>
             <div className="bg-[#FAFAFA] overflow-hidden group cursor-pointer transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
-              <div className={`relative overflow-hidden bg-gradient-to-br from-[#E8E5DF] to-[#D8D4CC] ${project.featured ? 'h-56 md:h-80' : 'h-48 md:h-56'}`}>
+              <div className={`relative overflow-hidden bg-linear-to-br from-[#E8E5DF] to-[#D8D4CC] ${project.featured ? 'h-56 md:h-80' : 'h-48 md:h-56'}`}>
                 <PlaceholderImage />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
               <div className="p-4 md:p-5">
                 <p className="text-[0.6rem] tracking-[0.2em] uppercase text-[#C8A96E] mb-1">{project.tag}</p>
