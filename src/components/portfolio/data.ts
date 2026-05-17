@@ -19,6 +19,11 @@ export interface Certification {
   org: string
 }
 
+export interface SoftwareSkill {
+  name: string
+  percentage: number
+}
+
 export const EXPERIENCE: ExperienceItem[] = [
   { date: 'Sep 2020 – Present', role: 'Architect', company: 'Advanced Engineering Consultants', location: 'Lagos, Nigeria', current: true },
   { date: 'May 2017 – Jul 2017', role: 'Architectural Intern', company: 'Desired Choice Step', location: 'Ibadan, Nigeria' },
@@ -39,10 +44,28 @@ export const CERTIFICATIONS: Certification[] = [
   { number: '03', name: 'Young Architects Day', org: 'WW2BAA3 · International' },
 ]
 
+// Software tools with proficiency percentage (75–100)
+export const SOFTWARE_SKILLS: SoftwareSkill[] = [
+  { name: 'AutoCAD',    percentage: 95 },
+  { name: 'Revit',      percentage: 90 },
+  { name: 'Lumion',     percentage: 85 },
+  { name: 'Fusion 360', percentage: 80 },
+  { name: 'SketchUp',   percentage: 88 },
+  { name: 'ArchiCAD',   percentage: 75 },
+]
+
+// General / soft skills — rendered as pills (must stay as string[])
 export const SKILLS: string[] = [
-  'Architectural Design', 'Attention to Detail', 'Relationship Building',
-  'Project Management', 'Organization Skills', 'Team Collaboration',
-  'Deadline Delivery', 'Space Planning', 'Construction Documentation', 'Client Communication',
+  'Architectural Design',
+  'Space Planning',
+  'Construction Documentation',
+  'Attention to Detail',
+  'Relationship Building',
+  'Project Management',
+  'Organization Skills',
+  'Team Collaboration',
+  'Deadline Delivery',
+  'Client Communication',
 ]
 
 export const NAV_LINKS = ['About', 'Experience', 'Projects', 'Contact'] as const

@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section id="about" className="px-6 md:px-12 py-16 md:py-24 bg-[#1A1A1A]">
       <Reveal>
-        <p className="text-[0.62rem] tracking-[0.3em] uppercase text-[#C8A96E] mb-3">01 — About</p>
+        <p className="text-[0.62rem] tracking-[0.3em] uppercase text-[#C8A96E] mb-3 text-center">01 — About</p>
       </Reveal>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start mt-2">

@@ -16,13 +16,12 @@ export default function Contact() {
           Open to new projects, collaborations &amp; conversations.
         </p>
 
-        {/* 👇 Replace with his actual email */}
         <a
-          href="mailto:favour@email.com"
+          href="mailto:ogabifavour11@email.com"
           className="no-underline border-b border-[#444] pb-1.5 text-[#E8E5DF] hover:text-[#C8A96E] hover:border-[#C8A96E] transition-all duration-300 inline-block"
           style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(1.1rem, 2.5vw, 1.8rem)' }}
         >
-          favour@email.com
+          SEND A MAIL
         </a>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 mt-10">

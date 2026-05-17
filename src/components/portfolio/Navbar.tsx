@@ -24,7 +24,7 @@ export default function Navbar() {
         <ul className="hidden md:flex gap-10 list-none">
           {NAV_LINKS.map((link) => (
             <li key={link}>
-              <a href={`#${link.toLowerCase()}`} className="text-[0.65rem] font-medium tracking-[0.22em] uppercase text-[#6B6B6B] hover:text-[#0D0D0D] no-underline transition-colors duration-300">
+              <a href={`#${link.toLowerCase()}`} className="text-[0.65rem] font-medium tracking-[0.22em] uppercase text-[#6B6B6B] hover:text-[#7A5A20] no-underline transition-colors duration-300">
                 {link}
               </a>
             </li>
@@ -34,21 +34,21 @@ export default function Navbar() {
         {/* Hamburger */}
         <button
           onClick={() => setMenuOpen((p) => !p)}
-          className="md:hidden flex flex-col justify-center items-center gap-[5px] w-8 h-8 cursor-pointer bg-transparent border-none p-0"
+          className="md:hidden flex flex-col justify-center items-center gap-1.25 w-8 h-8 cursor-pointer bg-transparent border-none p-0"
           aria-label="Toggle menu"
         >
           <span className={`block w-6 h-[1.5px] bg-[#0D0D0D] transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-[6.5px]' : ''}`} />
           <span className={`block w-6 h-[1.5px] bg-[#0D0D0D] transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-6 h-[1.5px] bg-[#0D0D0D] transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-[6.5px]' : ''}`} />
+          <span className={`block w-6 h-[1.5px] bg-[#0D0D0D] transition-all duration-300 ${menuOpen ? '-rotate-45 translate-y-[6.5px]' : ''}`} />
         </button>
       </nav>
 
       {/* Mobile menu */}
-      <div className={`fixed top-[57px] left-0 right-0 z-40 bg-[#FAFAFA]/95 backdrop-blur-md border-b border-[#E0DDD6] transition-all duration-300 md:hidden ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+      <div className={`fixed top-14.25 left-0 right-0 z-40 bg-[#FAFAFA]/95 backdrop-blur-md border-b border-[#E0DDD6] transition-all duration-300 md:hidden ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
         <ul className="flex flex-col list-none px-6 py-5 gap-5">
           {NAV_LINKS.map((link) => (
             <li key={link}>
-              <a href={`#${link.toLowerCase()}`} onClick={handleLinkClick} className="text-[0.75rem] font-medium tracking-[0.22em] uppercase text-[#6B6B6B] hover:text-[#0D0D0D] no-underline transition-colors duration-300 block py-1">
+              <a href={`#${link.toLowerCase()}`} onClick={handleLinkClick} className="text-[0.75rem] font-medium tracking-[0.22em] uppercase text-[#6B6B6B] hover:text-[#7A5A20] no-underline transition-colors duration-300 block py-1">
                 {link}
               </a>
             </li>

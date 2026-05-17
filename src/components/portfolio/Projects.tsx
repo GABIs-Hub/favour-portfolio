@@ -3,11 +3,11 @@ import { PROJECTS } from './data'
 
 function PlaceholderImage() {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center text-[#B8B8B8] gap-2">
+    <div className="w-full h-full flex flex-col items-center justify-center text-[#FAFAFA] gap-2">
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="opacity-50" aria-hidden="true">
         <rect x="3" y="3" width="18" height="18" rx="1" /><path d="M3 9h18M9 21V9" />
       </svg>
-      <span className="text-[0.6rem] tracking-[0.2em] uppercase opacity-70">Images Coming Soon</span>
+      <span className="text-[0.6rem] tracking-[0.2em] uppercase opacity-70 text-center">Images Coming Soon</span>
     </div>
   )
 }
@@ -16,10 +16,10 @@ export default function Projects() {
   return (
     <section id="projects" className="px-6 md:px-12 py-16 md:py-24 bg-[#F0EEE9]">
       <Reveal>
-        <p className="text-[0.62rem] tracking-[0.3em] uppercase text-[#C8A96E] mb-3">03 — Work</p>
+        <p className="text-[0.62rem] tracking-[0.3em] uppercase text-[#C8A96E] mb-3 text-center">03 — Work</p>
       </Reveal>
       <Reveal delay={100}>
-        <h2 className="font-light leading-[1.05] mb-10 md:mb-12 text-[#0D0D0D]" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4.5vw, 3.8rem)' }}>
+        <h2 className="font-light leading-[1.05] mb-10 md:mb-12 text-[#0D0D0D] text-center" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4.5vw, 3.8rem)' }}>
           Selected<br /><em className="text-[#6B6B6B]">Projects</em>
         </h2>
       </Reveal>
