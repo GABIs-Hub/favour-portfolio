@@ -4,6 +4,7 @@ import { NAV_LINKS } from './data'
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [activeLink, setActiveLink] = useState<string | null>(null)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40)
@@ -11,7 +12,10 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const handleLinkClick = () => setMenuOpen(false)
+  const handleLinkClick = (link: string) => {
+    setActiveLink(link)
+    setMenuOpen(false)
+  }
 
   return (
     <>
@@ -24,8 +28,9 @@ export default function Navbar() {
         <ul className="hidden md:flex gap-10 list-none">
           {NAV_LINKS.map((link) => (
             <li key={link}>
-              <a href={`#${link.toLowerCase()}`} className="text-[0.65rem] font-medium tracking-[0.22em] uppercase text-[#6B6B6B] hover:text-[#7A5A20] no-underline transition-colors duration-300">
+              <a href={`#${link.toLowerCase()}`} className="text-[0.65rem] font-medium tracking-[0.22em] uppercase text-[#6B6B6B] hover:text-[#7A5A20] no-underline transition-all duration-300 relative pb-1 group">
                 {link}
+                <span className="absolute bottom-0 left-0 w-0 h-px bg-[#C8A96E] group-hover:w-full transition-all duration-300" />
               </a>
             </li>
           ))}
@@ -48,7 +53,13 @@ export default function Navbar() {
         <ul className="flex flex-col list-none px-6 py-5 gap-5">
           {NAV_LINKS.map((link) => (
             <li key={link}>
-              <a href={`#${link.toLowerCase()}`} onClick={handleLinkClick} className="text-[0.75rem] font-medium tracking-[0.22em] uppercase text-[#6B6B6B] hover:text-[#7A5A20] no-underline transition-colors duration-300 block py-1">
+              <a
+                href={`#${link.toLowerCase()}`}
+                onClick={() => handleLinkClick(link)}
+                className={`text-[0.75rem] font-medium tracking-[0.22em] uppercase no-underline transition-colors duration-300 block py-1 ${
+                  activeLink === link ? 'text-[#C8A96E]' : 'text-[#6B6B6B]'
+                }`}
+              >
                 {link}
               </a>
             </li>

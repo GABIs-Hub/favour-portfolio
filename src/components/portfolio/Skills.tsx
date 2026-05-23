@@ -1,7 +1,12 @@
+'use client'
+
+import { useState } from 'react'
 import Reveal from './Reveal'
-import { SKILLS } from './data'
+import { SKILLS, SOFTWARE_SKILLS } from './data'
 
 export default function Skills() {
+  const [activeSoftwareSkill, setActiveSoftwareSkill] = useState<string | null>(null)
+
   return (
     <section className="px-6 md:px-12 py-16 md:py-24 bg-[#FAFAFA]">
       <Reveal>
@@ -18,6 +23,21 @@ export default function Skills() {
             <span key={skill} className="text-[0.72rem] tracking-widest px-4 py-2 border border-[#E0DDD6] text-[#444] bg-[#FAFAFA] hover:border-[#C8A96E] hover:text-[#0D0D0D] transition-all duration-300 cursor-default">
               {skill}
             </span>
+          ))}
+          {SOFTWARE_SKILLS.map((software_skill) => (
+            <button
+              key={software_skill.name}
+              onClick={() => setActiveSoftwareSkill(activeSoftwareSkill === software_skill.name ? null : software_skill.name)}
+              onMouseEnter={() => setActiveSoftwareSkill(software_skill.name)}
+              onMouseLeave={() => setActiveSoftwareSkill(null)}
+              className="text-[0.72rem] tracking-widest px-4 py-2 border border-[#E0DDD6] text-[#444] bg-[#FAFAFA] hover:border-[#C8A96E] hover:text-[#0D0D0D] transition-all duration-300 cursor-pointer md:cursor-default relative"
+            >
+              {activeSoftwareSkill === software_skill.name ? (
+                <span className="font-semibold">{software_skill.percentage}%</span>
+              ) : (
+                software_skill.name
+              )}
+            </button>
           ))}
         </div>
       </Reveal>
